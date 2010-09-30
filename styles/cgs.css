@@ -1,0 +1,226 @@
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, figure, footer, header, 
+hgroup, menu, nav, section, menu,
+time, mark, audio, video {
+  margin:0;
+  padding:0;
+  border:0;
+  outline:0;
+  font-size:100%;
+  vertical-align:baseline;
+  background:transparent;
+}                  
+
+article, aside, figure, footer, header, 
+hgroup, nav, section { display:block; }
+
+nav ul { list-style:none; }
+
+blockquote, q { quotes:none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after { content:''; content:none; }
+
+a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom:1px dotted #000; cursor:help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse:collapse; border-spacing:0; }
+
+hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+
+input, select { vertical-align:middle; }
+
+/**** END RESET CSS ****/
+
+
+html, body {height:100%;width:100%;font-family:Helvetica,Arial,sans-serif;position:relative;}
+
+@font-face { 
+	font-family: 'Pictos';
+	src: url('../fonts/pictos-web.eot');
+	src: url('../fonts/pictos-web.woff') format('woff'), url('../fonts/pictos-web.ttf') format('truetype');
+}
+
+
+
+#pageWrapper {width:100%;height:100%;display:table;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#222), to(#111));}
+  #headerWrapper {width:100%;height:80px;padding:10px 0;background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF6C28), to(#FF3F1E));
+  	border-bottom:5px solid #000;}
+    #headerInner {width:960px;margin:0 auto;position:relative;}
+      #logo {position:absolute;top:0;left:0;height:150px;}
+      
+  #contentWrapper {width:100%;position:relative;padding:80px 0;}
+    #contentInner {
+    	width:840px;
+    	margin:0 auto;
+    	position:relative;
+    }
+    	#latestEpisodes {list-style:none;outline:none;}
+    	
+    	  #latestEpisodes li.episodeWrapper {
+    	  	display:block;
+    	  	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #fff),color-stop(1, #ddd));
+		display:inline-block;
+		padding:20px;
+		margin: 10px;
+		width: 360px;
+		-webkit-border-radius: 5px;
+    		-webkit-box-shadow: 0px 0px 30px #000;
+    		vertical-align:top;
+    	  }
+    	  
+    	  #latestEpisodes li ul {
+    	  	list-style:none;
+    	  	float:left;clear:both;
+    	  }
+    	  
+    	  #latestEpisdoes li ul li {
+    	  	float:left;
+    	  }
+    	  
+    	  #latestEpisodes ul .button {
+    	  	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eee),color-stop(1, #bbb));
+    	  	-webkit-border-radius: 3px;
+    		-webkit-box-shadow: 0px 0px 4px #444;
+    		padding: 4px 10px;
+    		color: #444;
+    		font-weight:bold;
+    		font-size:70%;
+    		cursor:pointer;
+    		text-decoration:none;
+	  }
+	  #latestEpisodes ul .button:hover {
+	  	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, #eee),color-stop(1, #ccc));
+	  }
+
+	  #latestEpisodes ul .button:active {
+	  	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(1, #ddd),color-stop(0, #bbb));
+	  }
+
+    	  #latestEpisodes ul .button span {
+    	  	font-family: Pictos;
+    	  	font-weight:normal;
+    	  	font-size:120%;
+    	  }
+    	  
+    	  #latestEpisodes .episodeDetailsWrapper {float:left;width:200px;padding:0 10px;}
+    	  #latestEpisodes .episodePic {float:left;margin-right:10px;background-color:#eee;padding:10px;}
+    	  #latestEpisodes .episodeNumber {font-weight:bold;font-size:90%;color#222;float:left;}
+    	  #latestEpisodes .episodeName {font-size:90%;font-weight:bold;color:#222;float:left;clear:both;}
+    	  #latestEpisodes .episodeDate {font-size:80%;font-style:italic;padding:5px 0;color:#555;float:left;clear:both;}
+    	  #latestEpisodes .episodeDesc {font-size:80%;color:#555;float:left;clear:both;}
+    	  
+
+#playerWrapper {
+	position:fixed;
+	bottom:0;
+	left:0;
+	width:100%;
+	height:60px;
+	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#eee), to(#bbb));
+	-webkit-box-shadow:0px 0px 15px #333;
+    }
+    
+    #playButton {
+    	display:block;
+    	float:left;
+    	height:18px;
+    	width:18px;
+    	padding:11px;
+    	margin: 5px 10px;
+        -webkit-border-radius:30px;
+        background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF3F1E), to(#BB322E));
+        border: 3px solid #fff;
+        pointer: cursor;
+        font-family: Pictos;
+	font-size: 24px;
+    	color:#fff;
+    	text-align:center;
+    	line-height:0;
+    	cursor:pointer;
+    }
+    
+    #playButton:hover {
+        background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF4E28), to(#FF3F1E));
+        border: 3px solid #fff;    
+    }
+    
+    #playButton:active {
+        background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#BB322E), to(#FF3F1E));
+        border: 3px solid #eee;
+    }
+    
+    
+    #episodeDesc {
+    	color: #555;
+    	width: 20%;
+    	float:left;
+    	padding: 15px 2.5%;
+    	font-size:90%;
+    	font-weight:bold;
+    }
+    
+    #playBar {
+    	width: 60%;
+    	height: 10px;
+    	margin-top:15px;
+    	float:left;
+    	position:relative;
+    	background:-webkit-gradient(linear, 0% 100%, 0% 0%, from(#eee), to(#bbb));
+    	-webkit-border-radius:5px;
+    	cursor:pointer;
+    }
+    
+    #playBar #progress {
+    	background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#FF3F1E), to(#99322E));
+    	height:10px;
+    	position:absolute;
+    	top:0;
+    	left:0;
+    	width:0%;
+    	-webkit-border-radius:5px;
+    }
+    
+    #playBar playBarLoading {
+	background:-webkit-gradient(linear, 0% 100%, 0% 0%, from(#fff), to(#ddd));
+    	height:10px;
+    	position:absolute;
+    	top:0;
+    	left:0;
+    	width:0%;
+    	-webkit-border-radius:5px;
+    }
+    
+    #playBar #episodeCurSpot {
+    	color:#555;
+    	font-size:80%;
+    	font-weight:bold;
+    	position:absolute;
+    	left: -2%;
+    	top: 14px;
+    }
+    
+    #playBar #episodeDuration {
+    	color:#555;
+    	font-size:80%;
+    	font-weight:bold; 
+    	position:absolute;
+    	right: -2%;	
+    	top: 14px;
+	}

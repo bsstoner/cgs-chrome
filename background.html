@@ -1,0 +1,45 @@
+<html>
+<head>
+	<script>
+
+		setInterval(function(){
+
+			try {
+				var latestLocalEpisodeId = localStorage["lastEpisodeId"];
+			} catch (e) {
+				var latestLocalEpisodeId = null;
+			}
+
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", "http://www.comicgeekspeak.com/api/latestEpisode.php?count=1", true);
+			xhr.onreadystatechange = function(){
+				if (xhr.readyState == 4){
+					var serverEpisodes = JSON.parse(xhr.responseText);
+
+					console.log(serverEpisodes);
+					var latestServerEpisodeId = (serverEpisodes[0]) ? serverEpisodes[0].id : null;
+					var latestServerEpisodeName = (serverEpisodes[0]) ? serverEpisodes[0].episodeName : "";
+
+					if (latestServerEpisodeId != latestLocalEpisodeId){
+						var notification = webkitNotifications.createNotification(
+						  'icon_128.png',  // icon url - can be relative
+						  'New Episode Available',  // notification title
+						  latestServerEpisodeName  // notification body text
+						);
+
+						notification.show();
+
+						localStorage["lastEpisodeId"] = latestServerEpisodeId;
+					}
+				}
+			}
+			xhr.send();
+
+		}, 60 * 60 * 1000);
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
