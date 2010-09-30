@@ -1,7 +1,7 @@
 {
   "name": "Comic Geek Speak",
   "description": "Keep up with the latest from the Comic Geek Speak podcast.  http://comicgeekspeak.com",
-  "version": "0.1",
+  "version": "0.2",
   "app": {
     "launch": {
       "local_path": "index.html"
