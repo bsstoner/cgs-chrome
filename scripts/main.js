@@ -1,10 +1,6 @@
 Player = {
     play: function(filename, desc){
         var context = this;
-        
-        if (this.audio){
-            this.stop();
-        }
 
         if (this.statInt){
             clearInterval(this.statInt);
